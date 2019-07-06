@@ -159,10 +159,12 @@ static NSString * const consumerSecret = @"s5ynGqXzstUZwFPxVyMDkYh197qvHOcVM3kwv
     }];
 }
 
-- (void)getUserTimelineWithCompletion:(void(^)(NSArray *tweets, NSError *error))completion {
+- (void)getUserTimeline:(NSString *)userID completion:(void(^)(NSArray *tweets, NSError *error))completion {
     
+    NSDictionary *parameters = @{@"user_id": userID};
+
     [self GET:@"1.1/statuses/user_timeline.json"
-   parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSArray *  _Nullable tweetDictionaries) {
+   parameters:parameters progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSArray *  _Nullable tweetDictionaries) {
        
        // Manually cache the tweets. If the request fails, restore from cache if possible.
        NSData *data = [NSKeyedArchiver archivedDataWithRootObject:tweetDictionaries];

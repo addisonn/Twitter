@@ -26,6 +26,5 @@
 
 - (void)moreTimeline:(NSString *)postID completion:(void(^)(NSArray *tweets, NSError *error))completion;
 
-- (void)getUserTimelineWithCompletion:(void(^)(NSArray *tweets, NSError *error))completion;
-
+- (void)getUserTimeline:(NSString *)userID completion:(void(^)(NSArray *tweets, NSError *error))completion;
 @end

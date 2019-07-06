@@ -2,7 +2,7 @@
 
 **Twitter** is a basic twitter app to read and compose tweets the [Twitter API](https://apps.twitter.com/).
 
-Time spent: **20** hours spent in total
+Time spent: **24** hours spent in total
 
 ## User Stories
 
@@ -24,38 +24,34 @@ The following **optional** features are implemented:
 - [ ] User can view their profile in a *profile tab*
 - Contains the user header view: picture and tagline
 - Contains a section with the users basic stats: # tweets, # following, # followers
-- [ ] Profile view should include that user's timeline
+- [x] Profile view should include that user's timeline
 - [x] User should display the relative timestamp for each tweet "8m", "7h"
 - [x] User should be able to unretweet and unfavorite and should decrement the retweet and favorite count. Refer to [[this guide|unretweeting]] for help on implementing unretweeting.
 - [ ] Links in tweets are clickable.
-- [ ] User can tap the profile image in any tweet to see another user's profile
+- [x] User can tap the profile image in any tweet to see another user's profile
 - Contains the user header view: picture and tagline
 - Contains a section with the users basic stats: # tweets, # following, # followers
 - [x] User can load more tweets once they reach the bottom of the feed using infinite loading similar to the actual Twitter client.
-- [x] When composing, you should have a countdown for the number of characters remaining for the tweet (out of 140) (**1 point**)
+- [x] When composing, you should have a countdown for the number of characters remaining for the tweet (out of 140)
 - [x] After creating a new tweet, a user should be able to view it in the timeline immediately without refetching the timeline from the network.
-- [x] User can reply to any tweet, and replies should be prefixed with the username and the reply_id should be set when posting the tweet (**2 points**)
+- [x] User can reply to any tweet, and replies should be prefixed with the username and the reply_id should be set when posting the tweet
 - [ ] User sees embedded images in tweet if available
-- [ ] User can switch between timeline, mentions, or profile view through a tab bar (**3 points**)
-- [ ] Profile Page: pulling down the profile page should blur and resize the header image. (**4 points**)
+- [ ] User can switch between timeline, mentions, or profile view through a tab bar
+- [ ] Profile Page: pulling down the profile page should blur and resize the header image.
 
-
-The following **additional** features are implemented:
-
-- [ ] List anything else that you can get done to improve the app functionality!
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1.
-2.
+1. How to break down contents more into media objects, makes links more clickable/images to show
+2. Small windows popping up in screens
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://g.recordit.co/SfWkjTUiiS.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-GIF created with [LiceCap](http://www.cockos.com/licecap/).
+GIF created with [RecordIt](http://recordit.co/).
 
 ## Notes
 

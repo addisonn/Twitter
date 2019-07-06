@@ -8,8 +8,12 @@
 
 #import "ProfileViewController.h"
 #import "UIImageView+AFNetworking.h"
+#import "Tweetcell.h"
+#import "APIManager.h"
+#import "Tweet.h"
 
 @interface ProfileViewController () <UITableViewDataSource, UITableViewDelegate>
+@property (strong, nonatomic) NSMutableArray *tweets;
 @property (weak, nonatomic) IBOutlet UIImageView *bannerPic;
 @property (weak, nonatomic) IBOutlet UIImageView *profilePic;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -18,6 +22,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *followerLabel;
 @property (weak, nonatomic) IBOutlet UILabel *tweetLabel;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIImageView *profileTablePic;
+
 
 @end
 
@@ -40,6 +46,17 @@
     self.followerLabel.text = [NSString stringWithFormat:@"%d", self.tappedUser.followerCount];
     self.followingLabel.text = [NSString stringWithFormat:@"%d", self.tappedUser.followingCount];
     self.tweetLabel.text = [NSString stringWithFormat:@"%d", self.tappedUser.tweetCount];
+    
+    [[APIManager shared] getUserTimeline:self.tappedUser.userID completion:^(NSArray *tweets, NSError *error) {
+        if (tweets) {
+            NSLog(@"😎😎😎 Successfully loaded home timeline");
+            self.tweets = [NSMutableArray arrayWithArray:tweets];
+            [self.tableView reloadData];
+            
+        } else {
+            NSLog(@"😫😫😫 Error getting home timeline: %@", error.localizedDescription);
+        }
+    }];
 }
 
 /*
@@ -53,7 +70,14 @@
 */
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    
+    TweetCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TweetCell"];
+    Tweet *tweet = self.tweets[indexPath.row];
+    cell.tweet = tweet;
+    cell.nameLabel.text = tweet.user.name;
+    cell.contentLabel.text = tweet.text;
+    NSURL *profileURL = [NSURL URLWithString:self.tappedUser.profilePic];
+    [cell.profilePic setImageWithURL:profileURL];
+    return cell;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

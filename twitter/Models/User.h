@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) int followerCount; // Update favorite count label
 @property (nonatomic) int followingCount; // Update favorite count label
 @property (nonatomic) int tweetCount; // Update favorite count label
-
+@property (strong, nonatomic) NSString *userID;
 
 
 // TODO: Create initializer

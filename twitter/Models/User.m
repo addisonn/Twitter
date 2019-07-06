@@ -21,6 +21,7 @@
         self.followerCount = [dictionary[@"followers_count"] intValue];
         self.followingCount = [dictionary[@"followers_count"] intValue];
         self.tweetCount = [dictionary[@"statuses_count"] intValue];
+        self.userID = dictionary[@"id_str"];
     }
     return self;
 }
