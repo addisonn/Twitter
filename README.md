@@ -57,6 +57,8 @@ GIF created with [RecordIt](http://recordit.co/).
 
 Describe any challenges encountered while building the app.
 
+Some of the challenges include more complicated API calls beyond just querying for data, synchronization, and connecting different pieces (viewcontrollers, models, cells, etc.) together.
+
 https://paper.dropbox.com/doc/Twitter--ADuVCVvwop_njSNAbUU96Q2VAQ-g255BPX3K4X7G0reYOWCI
 
 
@@ -65,6 +67,8 @@ https://paper.dropbox.com/doc/Twitter--ADuVCVvwop_njSNAbUU96Q2VAQ-g255BPX3K4X7G0
 List an 3rd party libraries, icons, graphics, or other assets you used in your app.
 
 - [AFNetworking](https://github.com/AFNetworking/AFNetworking) - networking task library
+- [BDBOAuth1Manager](https://github.com/bdbergeron/BDBOAuth1Manager) - authentication library
+- [DateTools](https://github.com/MatthewYork/DateTools) - data formatter
 
 ## License
 
